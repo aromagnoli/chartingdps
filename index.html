@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Charting DPS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Header -->
+      <div id="header">
+        <span class="logo fas fa-chart-line"></span>
+        <h1>Charting DPS</h1>
+        <p>Here you can see charts about every dps class and how good they are performing for the current content.
+        <br />
+        The data used here was gathered from <a href="http://www.simulationcraft.org/">SimulationCraft</a>.
+        <br />
+        Remember: what do you see here are simulations and not necessarily match ingame numbers.</p>
+      </div>
+
+    <!-- Main -->
+      <div id="main">
+        <div class="box container">
+          <header>
+            <h2>What you can do here?</h2>
+          </header>
+          <section>
+            <ul class="default">
+              <li>Zoom in and out by clicking in the chart and dragging the mouse's pointer around.</li>
+              <li>Export a screenshot at the top right menu of each chart.</li>
+              <li>Click on the legends to hide or show specific lines.</li>
+            </ul>
+          </section>
+          <section>
+            <div id="chartContainerLegion">
+              <p>Chart for Legion will load here!</p>
+            </div>
+          </section>
+          <section>
+            <p><hr /></p>
+          </section>
+          <section>
+            <div id="chartContainerBfA80">
+              <p>Chart for Battle for Azeroth 8.0 will load here!</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    <!-- Footer -->
+      <div id="footer">
+        <div class="container 75%">
+
+          <header class="major last">
+            <h2>Contact</h2>
+          </header>
+
+          <ul class="icons">
+            <li><a href="#" class="icon fab fa-twitter"><span class="label" target="_blank">Twitter (soon?)</span></a></li>
+            <li><a href="#" class="icon fab fa-facebook-f"><span class="label" target="_blank">Facebook (soon?)</span></a></li>
+            <li><a href="https://github.com/aromagnoli/chartingdps" class="icon fab fa-github" target="_blank"><span class="label">Github</span></a></li>
+            <li><a href="https://discord.gg/tFR2uvK" class="icon fab fa-discord" target="_blank"><span class="label">Discord</span></a></li>
+          </ul>
+
+          <ul class="copyright">
+            <li>&copy; Charting DPS. All rights reserved.</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+      <script type="text/javascript" src="assets/fusioncharts/js/fusioncharts.js"></script>
+    <script type="text/javascript">
+      FusionCharts.ready(function() {
+          // Legion Tier 21 at 960 ilvl
+          var legion_dps_960 = new FusionCharts({
+              "type": "zoomline",
+              "renderAt": "chartContainerLegion",
+              "width": "100%",
+              "height": "720",
+              "dataFormat": "jsonurl",
+              "dataSource": "assets/json/legion-dps-960.json"
+          });
+          legion_dps_960.render();
+          
+          // BfA 8.0
+          var bfa_dps_80 = new FusionCharts({
+              "type": "zoomline",
+              "renderAt": "chartContainerBfA80",
+              "width": "100%",
+              "height": "720",
+              "dataFormat": "jsonurl",
+              "dataSource": "assets/json/bfa-dps-80.json"
+          });
+          bfa_dps_80.render();
+      })
+    </script>
+  </body>
+</html>
