@@ -6,3 +6,6 @@ Interactive charts with data gathered from [SimulationCraft].(http://www.simulat
 
 1. Legion Tier 21 Patch 7.3.5
 2. Battle For Azeroth Patch 8.0 [Next].
+
+http://github.com - automatic!
+[GitHub](http://github.com)
